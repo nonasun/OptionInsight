@@ -19,13 +19,7 @@ namespace OptionInsight
 
         public static IWebHost BuildWebHost(string[] args)
         {
-            var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("hosting.json", optional: true)
-                .Build();
-
             return WebHost.CreateDefaultBuilder(args)
-                .UseConfiguration(config)
                 .UseStartup<Startup>()
                 .Build();
         }
